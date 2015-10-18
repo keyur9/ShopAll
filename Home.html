@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ShopAll</title>
+<div class="home" style="color:white;background-color:orange" align="right">
+<a href="login page.html" style="color:orange" >LogIn </a>  <a href="registration.html" style="color:orange"> New User </a>
+</div>
+<br/>
+<script>
+
+function validateForm()
+{
+var x=document.forms["myForm"]["uname"].value;
+var y=document.forms["myForm"]["pwd"].value;
+
+if(x==null || x=="")
+{
+document.getElementById('reqfield1').innerHTML="*Required Feild";
+uname.style.border="solid 2px red";
+reqfield1.style.color="red";
+return false;
+}
+else
+{
+	if(x.length>10)
+	{
+	alert("Length Exceeds");
+	uname.style.border="solid 2px red";
+	return false;
+	}
+	else
+{
+	if(validateuname(x))
+	{
+	document.getElementById('reqfield1').innerHTML="";
+	uname.style.border="solid 2px black";
+	}
+	else
+	{
+	uname.style.border="solid 2px red";
+	return false;
+	}
+}
+}
+
+if(y==null || y=="")
+{
+document.getElementById('reqfield2').innerHTML="*Required Feild";
+pwd.style.border="solid 2px red";
+reqfield2.style.color="red";
+alert('Enter Password:');
+return false;
+}
+}
+
+
+function validateuname(x)
+{
+re = /^[A-Za-z]+$/;
+if(re.test(x) == false)
+{
+  alert("Enter Character Only");
+   return false;
+}
+else
+{
+	
+        return true;
+}	
+}
+</script>
+<div>
+<img src="Original_266x75.png"/>
+</div>
+</head>
+<body>
+<center>
+<form name="myForm" onsubmit="return validateForm()" action="Store_Manager.html" method="get">
+
+<div style="color:white;background-color:orange"  align="right">
+<b><a href="" style="color:orange">Home Page </a></b>
+</div>
+<br/><br/><br/>
+
+<fieldset class="fs" style="width:50%">
+<legend> LogIn Details</legend>
+<table align="center">
+<tr><td>User Name:</td>
+<td><input type="text" id="uname"></td>
+<td colspan="2" id="reqfield1"> </td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" id="pwd"></td>
+<td colspan="2" id="reqfield2"> </td>
+</tr>
+<tr>
+<td>Login As: </td>
+<td>
+<select name="login as">
+<option value="Sales_Manager" selected>Sales Manager</option>
+<option value="Employee">Employee</option>
+
+</select>
+</td>
+</tr>
+<tr><td align="center" colspan="2">
+<input type="submit" value="Submit" name="Submit"></td>
+</tr>
+</table>
+</fieldset> 
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div style="color:white;background-color:orange" align="center">
+<b>Copyright Reserved@2013</b>
+</div>
+</form>
+</center>
+</body>
+</html>
